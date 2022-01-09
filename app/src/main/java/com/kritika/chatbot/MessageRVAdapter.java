@@ -1,7 +1,5 @@
 package com.kritika.chatbot;
 
-import android.widget.ArrayAdapter;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,14 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Adapter extends RecyclerView.Adapter {
+public class MessageRVAdapter extends RecyclerView.Adapter {
 
     // variable for our array list and context.
-    private ArrayList<Modal> messageModalArrayList;
+    private ArrayList<MessageModal> messageModalArrayList;
     private Context context;
 
     // constructor class.
-    public Adapter(ArrayList<Modal> messageModalArrayList, Context context) {
+    public MessageRVAdapter(ArrayList<MessageModal> messageModalArrayList, Context context) {
         this.messageModalArrayList = messageModalArrayList;
         this.context = context;
     }
@@ -47,7 +45,7 @@ public class Adapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         // this method is use to set data to our layout file.
-        Modal modal = messageModalArrayList.get(position);
+        MessageModal modal = messageModalArrayList.get(position);
         switch (modal.getSender()) {
             case "user":
                 // below line is to set the text to our text view of user layout

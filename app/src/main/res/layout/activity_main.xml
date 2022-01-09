@@ -27,20 +27,28 @@
             android:id="@+id/idEdtMessage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
+            android:layout_weight="3"
             android:hint="@string/speak_now" />
 
         <!--button to send message-->
-        <ImageView
-            android:id="@+id/idIBSend"
+        <ImageButton
+            android:id="@+id/idIBListen"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@color/purple_200"
             android:src="@android:drawable/ic_btn_speak_now"
             app:tint="@color/white" />
-
+        <ImageButton
+            android:id="@+id/idIBSend"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@color/purple_200"
+            android:src="@drawable/ic_baseline_send_24"
+            app:tint="@color/white" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -1,10 +1,10 @@
 package com.kritika.chatbot;
 
-public class Modal {
+public class MessageModal {
     String message;
     String sender;
 
-    public Modal(String message, String sender) {
+    public MessageModal(String message, String sender) {
         this.message = message;
         this.sender = sender;
     }
