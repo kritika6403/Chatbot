@@ -6,8 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -15,19 +16,23 @@ import android.os.Bundle;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
+import android.text.format.Time;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
   EditText SpeakNow;
   ImageView mic;
+  RecyclerView chatsRV;
+  ArrayList<Modal> modalArrayList;
   SpeechRecognizer speechRecognizer;
     private static  final int RecordAudioCodeRequest=1;
 
@@ -46,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
  }
      SpeakNow = findViewById(R.id.idEdtMessage);
       mic = findViewById(R.id.idIBSend);
+      chatsRV= findViewById(R.id.idRVChats);
       speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
       final Intent speechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
       speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
@@ -108,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
               return false;
           }
       });
-
     }
 
     private void checkPermission() {

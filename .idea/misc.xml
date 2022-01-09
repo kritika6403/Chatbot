@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/LearnVern/Chatbot/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/LearnVern/Chatbot/app/src/main/res/layout/bot_msg.xml" value="0.271286231884058" />
+        <entry key="..\:/LearnVern/Chatbot/app/src/main/res/layout/user_msg.xml" value="0.176" />
       </map>
     </option>
   </component>
